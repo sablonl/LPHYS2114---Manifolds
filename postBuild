@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e  # don't allow errors to fail silently
+julia --project=. --threads=auto --startup-file=no --heap-size-hint=1G -e '
+using Pkg;
+Pkg.add(["LinearAlgebra", "Symbolics", "Groebner", "ModelingToolkit", "OrdinaryDiffEq", "Makie", "CairoMakie"])
+exit();
+'
